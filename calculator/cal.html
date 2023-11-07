@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script1.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome <span id="welcomeUsername"></span></h2>
+        <div class="form-group">
+            <label for="number1">Number 1:</label>
+            <input type="text" id="number1" class="form-control">
+            <div class="error-message" id="number1-error"></div>
+        </div>
+        <div class="form-group">
+            <label for="number2">Number 2:</label>
+            <input type="text" id="number2" class="form-control">
+            <div class="error-message" id="number2-error"></div>
+        </div>
+        <button id="add-btn" class="btn btn-primary">Add</button>
+        <button id="subtract-btn" class="btn btn-primary">Subtract</button>
+        <button id="multiply-btn" class="btn btn-primary">Multiply</button>
+        <button id="divide-btn" class="btn btn-primary">Divide</button>
+        <div class="form-group">
+            <label for="result">Result:</label>
+            <input type="text" id="result" class="form-control" readonly>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const username = urlParams.get('username');
+            $('#welcomeUsername').text(username);
+        });
+    </script>
+</body>
+</html>
